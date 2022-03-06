@@ -1,0 +1,30 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/containers';
+@import '../node_modules/bootstrap/scss/grid';
+
+$all-colors: (
+	$blues,
+	$indigos,
+	$purples,
+	$pinks,
+	$reds,
+	$oranges,
+	$yellows,
+	$greens,
+	$teals,
+	$cyans
+);
+
+@each $colorType in $all-colors {
+	@each $key, $value in $colorType {
+		.#{$key} {
+			color: $value;
+		}
+
+		.bg-#{$key} {
+			background-color: $value;
+		}
+	}
+}

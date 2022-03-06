@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="example.css" />
+		<title>Bootstrap Colors</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" id="blue"></div>
+			<div class="row" id="indigo"></div>
+			<div class="row" id="purple"></div>
+			<div class="row" id="pink"></div>
+			<div class="row" id="red"></div>
+			<div class="row" id="orange"></div>
+			<div class="row" id="yellow"></div>
+			<div class="row" id="green"></div>
+			<div class="row" id="teal"></div>
+			<div class="row" id="cyan"></div>
+		</div>
+	</body>
+	<script>
+		var colors = [
+			'blue',
+			'indigo',
+			'purple',
+			'pink',
+			'red',
+			'orange',
+			'yellow',
+			'green',
+			'teal',
+			'cyan',
+		];
+		var weights = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+		var colorDivs = {};
+		colors.forEach((color) => {
+			colorDivs[color] = ``;
+			weights.forEach((weight) => {
+				colorDivs[
+					color
+				] += `<div class="col bg-${color}-${weight}" style="height: 120px; width: 120px; padding: 20px">.${color}-${weight}</div>`;
+			});
+			document.querySelector(`#${color}`).innerHTML = colorDivs[color];
+		});
+
+		console.log(colorDivs);
+	</script>
+</html>
